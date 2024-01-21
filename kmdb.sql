@@ -113,6 +113,34 @@
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
 
+
+---------- SOLUTIONS----------------
+
+DROP TABLE IF EXISTS movies;
+DROP TABLE IF EXISTS studios;
+DROP TABLE IF EXISTS top_cast;
+
+CREATE TABLE movies (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    movie_title TEXT,
+    year_released TEXT,
+    mpaa_rating INTEGER,
+    studio_id INTEGER
+);
+
+CREATE TABLE studios (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    movies_id
+);
+
+CREATE TABLE top_cast (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    cast_name TEXT,
+    movies_id,
+    character_name
+);
+
+
 -- Prints a header for the movies output
 .print "Movies"
 .print "======"
