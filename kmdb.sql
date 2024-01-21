@@ -130,15 +130,42 @@ CREATE TABLE movies (
 
 CREATE TABLE studios (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    movies_id
+    studio_name
 );
 
 CREATE TABLE top_cast (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    cast_name TEXT,
+    actor_name TEXT,
     movies_id,
     character_name
 );
+
+INSERT INTO movies (movie_title, year_released, mpaa_rating, studio_id)
+VALUES
+("Batman Begins", 2005, "PG-13", "Warner Bros."),
+("The Drak Knight", 2008, "PG-13", "Warner Bros."),
+("The Dark Knight Rises", 2012, "PG-13", "Warner Bros.");
+
+INSERT INTO studios (studio_name)
+VALUES ("Warner Bros.");
+
+INSERT INTO top_cast (actor_name, movies_id, character_name)
+VALUES 
+("Michael Caine", 1, "Alfred")
+("Liam Neeson", 1, "Ra's Al Ghul")
+("Katie Holmes", 1, "Rachel Dawes")
+("Gary Oldman", 1, "Commissioner Gordon")
+("Chrsitian Bale", 2, "Bruce Wayne")
+("Heath Ledger", 2, "Joker")
+("Aaron Eckhart", 2, "Harvey Dent")
+("Michael Caine", 2, "Alfred")
+("Maggie Gyllenhaal", 2, "Rachel Dawes")
+("Christian Bale", 3, "Bruce Wayne")
+("Gary Oldman", 3, "Commissioner Gordon")
+("Tom Hardy", 3, "Bane")
+("Joseph Gordon-Levitt", 3, "John Blake")
+("Anne Hathaway", 3, "Selina Kyle");
+
 
 
 -- Prints a header for the movies output
